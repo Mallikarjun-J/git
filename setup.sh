@@ -10,9 +10,9 @@ sleep 1
 git config --global user.name "Mallikarjun-J"
 
 echo
-echo "$ git config --global user.email "[1by23is106@bmsit.in](mailto:1by23is106@bmsit.in)""
+echo "$ git config --global user.email "1by23is106@bmsit.in"
 sleep 1
-git config --global user.email "[1by23is106@bmsit.in](mailto:1by23is106@bmsit.in)"
+git config --global user.email "1by23is106@bmsit.in"
 
 echo
 echo "$ git clone https://github.com/Mallikarjun-J/test.git"
