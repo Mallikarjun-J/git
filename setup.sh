@@ -5,7 +5,7 @@ sleep 1
 git --version
 
 echo
-echo "$ git config --global user.name "Mallikarjun-J""
+echo "$ git config --global user.name "Mallikarjun-J"
 sleep 1
 git config --global user.name "Mallikarjun-J"
 
