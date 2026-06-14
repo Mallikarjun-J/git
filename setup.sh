@@ -9,7 +9,6 @@ echo "$ git config --global user.name "Mallikarjun-J"
 
 git config --global user.name "Mallikarjun-J"
 
-echo
 echo "$ git config --global user.email "1by23is106@bmsit.in"
 
 git config --global user.email "1by23is106@bmsit.in"
