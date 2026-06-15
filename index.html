@@ -3,3 +3,38 @@
 <br>
 
 <h3>mvn org.apache.maven.plugins:maven-archetype-plugin:3.2.1:generate "-DgroupId=com.example" "-DartifactId=demo-project" "-DarchetypeArtifactId=maven-archetype-quickstart" "-DinteractiveMode=false"</h3>
+<br>
+
+<h3>
+  pipeline {
+    agent any
+
+    tools {
+        maven 'Maven_3'
+    }
+
+    stages {
+
+        stage('Build') {
+            steps {
+                bat 'mvn org.apache.maven.plugins:maven-archetype-plugin:3.2.1:generate "-DgroupId=com.example" "-DartifactId=demo" "-DarchetypeArtifactId=maven-archetype-quickstart" "-DinteractiveMode=false"'
+
+                dir('demo') {
+                    bat 'mvn clean compile'
+                }
+            }
+        }
+
+        stage('SonarQube Analysis') {
+            steps {
+                dir('demo') {
+                    withSonarQubeEnv('SonarQube') {
+                        bat 'mvn sonar:sonar -Dsonar.login=YOUR_SONAR_TOKEN'
+                    }
+                }
+            }
+        }
+    }
+}
+
+</h3>
